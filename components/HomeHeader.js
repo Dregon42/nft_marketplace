@@ -1,10 +1,11 @@
 import React from 'react'
+import { View, Text } from 'react-native'
 
 const HomeHeader = () => {
   return (
-    <div>
-      
-    </div>
+    <View>
+      <Text>HomeHeader</Text>
+    </View>
   )
 }
 
