@@ -4,7 +4,6 @@ import { useNavigation } from '@react-navigation/native';
 
 import { COLORS, SIZES, SHADOWS, assets } from '../constants';
 import { CircleButton, RectangleButton } from './Button';
-
 import { SubInfo, NFTTitle, EtherPrice, People, EndDate } from './SubInfo';
 
 const NFTCards = ({ data }) => {
@@ -32,6 +31,19 @@ const NFTCards = ({ data }) => {
       </View>
       
       <SubInfo />
+
+      <View style={{ width: '100%', padding: SIZES.font }}>
+        <NFTTitle title={data.name} subTitle={data.creator} titleSize={SIZES.large} subTitleSize={SIZES.small} />
+        <View style={{
+          marginTop: SIZES.font,
+          flexDirection: 'row',
+          justifyContent: 'space-between',
+          alignItems: 'center'
+        }}>
+          <EtherPrice price={data.price} />
+          <RectangleButton minWidth={102} fontSize={SIZES.font} handlePress={() => navigation.navigate('Details', {data})}  /* This is how to navigate to a different page in React Native (ex. react-router) */ /> 
+        </View>
+      </View>
     </View>
   )
 }

@@ -24,11 +24,33 @@ export const CircleButton = ({ imgUrl, handlePress, ...props }) => {
   )
 }
 
-export const RectangleButton = () => {
+export const RectangleButton = ({ minWidth, fontSize, handlePress, ...props}) => {
   return (
-    <View>
-        <Text>RectangleButton</Text>
-    </View>
+  
+    <TouchableOpacity style={{
+        
+        backgroundColor: COLORS.primary,
+        borderRadius: SIZES.extraLarge,
+        minWidth: minWidth,
+        padding: SIZES.small,
+        ...SHADOWS.light,
+        ...props,
+    }}
+    onPress={handlePress}
+    >
+      <Text style={{
+        fontFamily: 'sans-serif',
+        fontWeight: 700,
+        fontSize: fontSize,
+        color: COLORS.white,
+        textAlign: 'center'
+      }}
+      >
+        Place Bid
+      </Text>
+      
+    </TouchableOpacity>
+  
   )
 }
 
