@@ -15,6 +15,13 @@ const DetailsHeader = ({ data, navigation }) => (
     <CircleButton 
       imgUrl={assets.left}
       handlePress={() => navigation.goBack()}
+      left={15}
+      top={StatusBar.currentHeight + 10}
+    />
+    <CircleButton 
+      imgUrl={assets.heart}
+      right={15}
+      top={StatusBar.currentHeight + 10}
     />
   </View>
 )
@@ -47,13 +54,17 @@ const Details = ({ route, navigation }) => {
 
       <FlatList 
         data={data.bids}
-        renderItem={(item) => <DetailsBid bid={item} /> }
+        renderItem={({ item }) => <DetailsBid bid={item} /> }
         keyExtractor={(item) => item.id}
         showsVerticalScrollIndicator={false}
         contentContainerStyle={{ paddingBottom: SIZES.extraLarge * 3}}
         ListHeaderComponent={() => (
           <Fragment>
             <DetailsHeader data={data} navigation={navigation} />
+            <SubInfo />
+            <View style={{ padding: SIZES.font }}>
+              <DetailsDesc data={data} />
+            </View>
           </Fragment>
         )}
       />
