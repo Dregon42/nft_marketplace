@@ -5,7 +5,7 @@ import { CircleButton, RectangleButton, SubInfo, FocusedStatusBar, DetailsBid, D
 import { Fragment } from 'react';
 
 const DetailsHeader = ({ data, navigation }) => (
-  <View style={{ width: '100%', height: 373 }}>
+  <View style={{ width: '100%', height: 373, }}>
     <Image 
       source={data.image}
       resizeMode='cover'
@@ -64,6 +64,16 @@ const Details = ({ route, navigation }) => {
             <SubInfo />
             <View style={{ padding: SIZES.font }}>
               <DetailsDesc data={data} />
+
+              {data.bids.length > 0 && (
+                <Text style={{
+                  fontSize: SIZES.font,
+                  fontWeight: 500,
+                  color: COLORS.primary,
+                }}>
+                  Current Bid
+                </Text>
+              )}
             </View>
           </Fragment>
         )}

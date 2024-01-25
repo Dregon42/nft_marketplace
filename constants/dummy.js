@@ -53,7 +53,7 @@ const NFTData = [
   },
   {
     id: "NFT-03",
-    name: "NFT coins race",
+    name: "NFT Truncula Tree",
     creator: "Elisabeth aho",
     price: 95.25,
     description:
@@ -135,7 +135,7 @@ const NFTData = [
   },
   {
     id: "NFT-06",
-    name: "Black box model",
+    name: "Blue scale model",
     creator: "Leo Messi",
     price: 20.25,
     description:

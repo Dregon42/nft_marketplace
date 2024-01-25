@@ -32,13 +32,13 @@ export const EtherPrice = ({ price }) => {
 export const ImageCmp = ({ imgUrl, index}) => {
   return (
     <Image 
-        source={imgUrl}
-        resizeMode='contain'
-        style={{
-            width: 48,
-            height: 48,
-            marginLeft: index === 0 ? 0 : -SIZES.font
-        }}
+      source={imgUrl}
+      resizeMode='contain'
+      style={{
+          width: 48,
+          height: 48,
+          marginLeft: index === 0 ? 0 : -SIZES.font
+      }}
     />
   )
 }
@@ -50,7 +50,7 @@ export const People = () => {
         flexDirection: 'row',
     }}>
       {[assets.person02, assets.person03, assets.person04].map((imgUrl, index) => (
-        <ImageCmp imgUrl={imgUrl} index={index} />
+        <ImageCmp imgUrl={imgUrl} key={index} />
       ))}
     </View>
   )
@@ -91,7 +91,7 @@ export const SubInfo = () => {
   return (
     <View style={{
         width: '100%',
-        paddingHorizontal: SIZES.font,
+        paddingHorizontal: SIZES.font * 2,
         marginTop: -SIZES.extraLarge,
         flexDirection: "row",
         justifyContent: 'space-between'
